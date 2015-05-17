@@ -1,5 +1,7 @@
 {
-  "name": "scafold",
+  "name": "bestmomo/scafold",
+  "description": "To add scafold to Laravel 5.1",
+  "homepage": "http://github.com/bestmomo/scafold",
   "license": "MIT",
   "authors": [
     {
