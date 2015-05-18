@@ -1,6 +1,6 @@
 <?php
 
 Route::controllers([
-	'auth' => 'App\Http\Controllers\Auth\AuthController',
-	'password' => 'App\Http\Controllers\Auth\PasswordController',
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
 ]);

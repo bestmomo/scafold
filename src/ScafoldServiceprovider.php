@@ -1,4 +1,4 @@
-<?php namespace	Bestmomo\Scafold;
+<?php namespace Bestmomo\Scafold;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,17 +15,20 @@ class ScafoldServiceProvider extends ServiceProvider{
 	public function boot()
 	{
 		// Routes
-		include __DIR__.'/Http/routes.php';
+		$this->app->router->group(['namespace' => 'App\Http\Controllers'], function()
+		{
+			require __DIR__.'/Http/routes.php';
+		});
 
 		// Views
-	    $this->publishes([
-	    	__DIR__.'/../views' => base_path('resources/views'),
-	        __DIR__.'/../views/auth' => base_path('resources/views/auth'),
-	    ]);
-
-	    // Assets
 		$this->publishes([
-		    __DIR__.'/../public' => public_path(),
+			__DIR__.'/../views' => base_path('resources/views'),
+			__DIR__.'/../views/auth' => base_path('resources/views/auth'),
+		]);
+
+		// Assets
+		$this->publishes([
+			__DIR__.'/../public' => public_path(),
 		], 'public');
 	}
 
