@@ -14,8 +14,11 @@ class ScafoldServiceProvider extends ServiceProvider{
 
 	public function boot()
 	{
+		// Get namespace
+		$nameSpace = $this->app->getNamespace();
+
 		// Routes
-		$this->app->router->group(['namespace' => 'App\Http\Controllers'], function()
+		$this->app->router->group(['namespace' => $nameSpace . 'Http\Controllers'], function()
 		{
 			require __DIR__.'/Http/routes.php';
 		});
@@ -24,7 +27,6 @@ class ScafoldServiceProvider extends ServiceProvider{
 		$this->publishes([
 			__DIR__.'/../views' => base_path('resources/views'),
 			__DIR__.'/../views/auth' => base_path('resources/views/auth'),
-			__DIR__.'/../views/emails' => base_path('resources/views/emails'),
 		]);
 
 		// Assets
