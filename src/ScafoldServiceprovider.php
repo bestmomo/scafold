@@ -27,6 +27,7 @@ class ScafoldServiceProvider extends ServiceProvider{
 		$this->publishes([
 			__DIR__.'/../views' => base_path('resources/views'),
 			__DIR__.'/../views/auth' => base_path('resources/views/auth'),
+			__DIR__.'/../views/emails' => base_path('resources/views/emails'),
 		]);
 
 		// Assets
