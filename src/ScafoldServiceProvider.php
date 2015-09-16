@@ -29,11 +29,6 @@ class ScafoldServiceProvider extends ServiceProvider{
 			__DIR__.'/../views/auth' => base_path('resources/views/auth'),
 			__DIR__.'/../views/emails' => base_path('resources/views/emails'),
 		]);
-
-		// Assets
-		$this->publishes([
-			__DIR__.'/../public' => public_path(),
-		], 'public');
 	}
 
 	public function register() {}
