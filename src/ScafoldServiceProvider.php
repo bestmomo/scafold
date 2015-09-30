@@ -1,6 +1,7 @@
 <?php namespace Bestmomo\Scafold;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 
 class ScafoldServiceProvider extends ServiceProvider
 {
