@@ -2,9 +2,9 @@
 
 namespace Bestmomo\Scafold\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use AppController;
 
-class HomeController extends Controller
+class HomeController extends AppController
 {
 	/**
 	 * Create a new controller instance.
@@ -15,6 +15,7 @@ class HomeController extends Controller
 	{
 		$this->middleware('auth');
 	}
+	
 	/**
 	 * Show the application dashboard to the user.
 	 *

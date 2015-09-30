@@ -2,8 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ScafoldServiceProvider extends ServiceProvider{
-
+class ScafoldServiceProvider extends ServiceProvider
+{
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -12,10 +12,18 @@ class ScafoldServiceProvider extends ServiceProvider{
 	 */
 	protected $defer = false;
 
+	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
 	public function boot()
 	{
 		// Get namespace
 		$nameSpace = $this->app->getNamespace();
+
+		// Set namespace alias for HomeController
+		AliasLoader::getInstance()->alias('AppController', $nameSpace . 'Http\Controllers\Controller');
 
 		// Routes
 		$this->app->router->group(['namespace' => $nameSpace . 'Http\Controllers'], function()
