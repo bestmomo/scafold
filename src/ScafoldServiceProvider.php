@@ -1,4 +1,4 @@
-<?php namespace Bestmomo\Scafold;
+<?php namespace MarcusCampos\Scafold;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
