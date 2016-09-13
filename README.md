@@ -5,7 +5,7 @@
 Execute the following command to get the latest version of the package:
 
 ```
-composer require marcus-campos/scafold
+composer require marcuscampos/scafold
 ```
 
 Add Scafold to your composer.json file to require Scafold :
