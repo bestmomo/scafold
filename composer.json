@@ -1,5 +1,5 @@
 {
-  "name": "bestmomo/scafold",
+  "name": "marcuscampos/scafold",
   "description": "To add scafold to Laravel 5.1",
   "homepage": "http://github.com/bestmomo/scafold",
   "license": "MIT",
@@ -12,6 +12,10 @@
       "name": "Bestmomo",
       "email": "grandheretique@free.fr"
     }
+    {
+      "name": "Marcus Campos",
+      "email": "marcus.campos@devyzi.com"
+    }
   ],
   "require": {
     "php": ">=5.4.0",
@@ -19,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Bestmomo\\Scafold\\": "src/"
+      "MarcusCampos\\Scafold\\": "src/"
     }
   }
 }
