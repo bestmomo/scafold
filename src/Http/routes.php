@@ -9,7 +9,7 @@ Route::group(['middleware' => ['web']], function () {
         // Login Routes...
         Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@showLoginForm']);
         Route::post('login', ['as' => 'auth.login.post', 'uses' => 'Auth\LoginController@login']);
-        Route::post('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
+        Route::get('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 
         // Registration Routes...
         Route::get('register', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
