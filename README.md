@@ -2,11 +2,17 @@
 
 ### Installation ###
 
+Execute the following command to get the latest version of the package:
+
+```
+composer require marcus-campos/scafold
+```
+
 Add Scafold to your composer.json file to require Scafold :
 ```
     require : {
-        "laravel/framework": "5.1.*",
-        "bestmomo/scafold": "dev-master"
+        "laravel/framework": "5.3.*",
+        "marcuscampos/scafold": "dev-master"
     }
 ```
 
@@ -17,7 +23,7 @@ Update Composer :
 
 The next required step is to add the service provider to config/app.php :
 ```
-    Bestmomo\Scafold\ScafoldServiceProvider::class,
+    MarcusCampos\Scafold\ScafoldServiceProvider::class,
 ```
 
 ### Publish ###
@@ -41,3 +47,6 @@ Then run this command :
 
 Congratulations, you have successfully installed Scafold !
 
+Tanks for scafold: 
+
+https://github.com/bestmomo/scafold
