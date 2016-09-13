@@ -1,20 +1,27 @@
 <?php
 
-Route::get('home', '\MarcusCampos\Scafold\Http\Controllers\HomeController@index');
+Route::group(['middleware' => ['web']], function () {
 
-// Authentication routes...
-Route::get('auth/login', 'Auth\LoginController@login');
-Route::post('auth/login', 'Auth\LoginController@login');
-Route::get('auth/logout', 'Auth\LoginController@logout');
+    Route::get('home', '\MarcusCampos\Scafold\Http\Controllers\HomeController@index');
 
-// Registration routes...
-Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
-Route::post('auth/register', 'Auth\RegisterController@register');
 
-// Password reset link request routes...
-Route::get('password/email', 'Auth\ForgotPasswordController@showLinkRequestForm');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::group(['prefix' => 'auth'], function (){
+        // Login Routes...
+        Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@showLoginForm']);
+        Route::post('login', ['as' => 'auth.login.post', 'uses' => 'Auth\LoginController@login']);
+        Route::post('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 
-// Password reset routes...
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+        // Registration Routes...
+        Route::get('register', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+        Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+    });
+
+    Route::group(['prefix' => 'password'], function (){
+        // Password Reset Routes...
+        Route::get('reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+        Route::post('email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+        Route::get('reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+        Route::post('reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
+    });
+
+});
