@@ -1,6 +1,6 @@
 <?php
 
-namespace Bestmomo\Scafold\Http\Controllers;
+namespace MarcusCampos\Scafold\Http\Controllers;
 
 use AppController;
 
