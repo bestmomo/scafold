@@ -2,17 +2,9 @@
 
 ### Installation ###
 
-Add Scafold to your composer.json file to require Scafold :
-```
-    require : {
-        "laravel/framework": "5.1.*",
-        "bestmomo/scafold": "dev-master"
-    }
-```
-
-Update Composer :
-```
-    composer update
+You can install this package by using [Composer](http://getcomposer.org), running this command:
+```sh
+    composer require bestmomo/scafold
 ```
 
 The next required step is to add the service provider to config/app.php :
