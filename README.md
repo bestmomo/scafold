@@ -1,6 +1,10 @@
 ## Scafold ##
 
-### Installation ###
+### Installation Laravel 5.3 ###
+
+To install on Laravel 5.3 go to [Scafold 5.3](https://github.com/marcus-campos/scafold).
+
+### Installation Laravel 5.1 ###
 
 You can install this package by using [Composer](http://getcomposer.org), running this command:
 ```sh
